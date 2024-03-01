@@ -1,0 +1,14 @@
+.icon_selector {
+    display: flex;
+    flex-wrap: wrap;
+}
+body {
+    text-align: center;
+    
+}
+.groot {
+    font-size: 2em;
+}
+.padding{
+    width:1em;
+  }
