@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", function () {
     make_tiles();
   });
   function make_tiles() {
-    data = get_JSON();
+    const data = get_JSON();
     console.log("loading tiles");
     for (let i = 0; i < data.naam.length; i++) {
       console.log("loading " + data.naam[i]);
@@ -65,7 +65,7 @@ window.addEventListener("DOMContentLoaded", function () {
     originalTile.remove();
   }
   function get_JSON() {
-    data = JSON.parse(localStorage.getItem("main"));
+    const data = JSON.parse(localStorage.getItem("main"));
     return data;
   }
   function setup() {

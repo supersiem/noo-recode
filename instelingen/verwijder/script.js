@@ -24,7 +24,7 @@
         number_in_list,
     ) {
         console.log(type);
-        if (type == "0") {
+        if (true) {
             // Get the original tile
             var originalTile = document.getElementById("tile");
 
