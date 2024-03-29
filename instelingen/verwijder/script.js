@@ -36,13 +36,7 @@
             const classNames = icondata;
             const Ielement = clonedTile.querySelector("i");
             Ielement.id = "skibedi_toilet";
-
-            Ielement.classList.remove("fa-thumbs-down");
-            Ielement.classList.remove("fa-solid");
             console.log(Ielement)
-            classNames.split(" ").forEach((className) => {
-                Ielement.classList.add(className);
-            });
 
             const Aelemet = clonedTile;
             Aelemet.href = "javascript:remove(" + number_in_list + ");";

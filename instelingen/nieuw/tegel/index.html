@@ -1,7 +1,20 @@
 <html lang="nl">
 
 <head>
+    <script>
+        // maak base
+        const baseElement = document.createElement("base");
+        baseElement.id = "baseElement";
+        baseElement.href = window.location.origin;
+        document.head.appendChild(baseElement);
 
+        // foto's
+        const images = document.getElementsByTagName("img");
+        for (let i = 0; i < images.length; i++) {
+            images[i].src =
+                window.location.origin + images[i].getAttribute("data-src");
+        }
+    </script>
     <script>
         window.addEventListener("DOMContentLoaded", function () {
             laad_iconen();
@@ -277,26 +290,13 @@
             return data;
         }
     </script>
-
-<script>
-    // maak base
-    const baseElement = document.createElement("base");
-    baseElement.id = "baseElement";
-    baseElement.href = window.location.origin;
-    document.head.appendChild(baseElement);
-
-    // foto's
-    const images = document.getElementsByTagName("img");
-    for (let i = 0; i < images.length; i++) {
-        images[i].src =
-            window.location.origin + images[i].getAttribute("data-src");
-    }
-</script>
-    <link rel="stylesheet" href="instelingen/nieuw/css/icon_selector.css" />
     <link rel="stylesheet" href="instelingen/nieuw/css/topbar.css" />
     <link rel="stylesheet" href="css/button.css" />
     <link rel="stylesheet" href="css/main.css" />
 
+
+    <link rel="stylesheet" href="instelingen/nieuw/css/icon_selector.css" />
+    <link rel="stylesheet" href="instelingen/nieuw/css/topbar.css" />
     <script src="https://kit.fontawesome.com/4f718ec3d3.js" crossorigin="anonymous"></script>
 </head>
 
@@ -314,8 +314,21 @@
             </a>
         </div>
     </div>
-    <h1>waarvan wil je een nieuwen maken</h1>
-    <a href="instelingen/nieuw/tegel/index.html"><button class="big_button">tegel</button></a>
-    <a href="instelingen/nieuw/widget/index.html"><button class="big_button">widget</button></a>
+
+    <form class="groot">
+        <label for="naam">naam</label>
+        <input type="text" name="naam" id="naam" /><br />
+        <label for="link">link</label>
+        <input type="text" name="link" id="link" />
+    </form>
+    <div class="icon_selector" id="container">
+        <a id="icon-temp" href="javascript:void(0);"><i class="fa-solid fa-bug fa-2x"></i></a>
+        <div id="padding" class="padding"></div>
+
+    </div>
+    <form class="groot">
+        <button type="button" onclick="submitf()">Submit</button>
+    </form>
 </body>
+
 </html>

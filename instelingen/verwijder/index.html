@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <!doctype html>
 <html>
+
 <head>
-    <script src="script.js"></script>
-    <script>
+    <script>    
         // maak base
         const baseElement = document.createElement("base");
         baseElement.id = "baseElement";
@@ -18,32 +19,33 @@
     </script>
     <link rel="stylesheet" href="css/main.css" id="main_css" />
     <link rel="stylesheet" href="css/tilles.css" id="tile_css" />
+    <script src="instelingen/verwijder/script.js" ></script>
     <script src="https://kit.fontawesome.com/4f718ec3d3.js" crossorigin="anonymous"></script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
-
-<body>
-    <div class="topbar_holder">
+<body id="body">
+    <div class="bars">
         <img src="foto's/noo.png" alt="" class="topimg" />
-
-        <div class="topbar">
-            <a href="index.html"><i class="fa-solid fa-house fa-3x"></i></a>
+        <div class="navbar">
+            <a href="index.html"><i class="fa-solid fa-house fa-2x"></i></a>
             <div class="padding"></div>
-            <a href="instelingen/nieuw/index.html"><i class="fa-solid fa-plus fa-3x"></i></a>
+            <a href="instelingen/nieuw/index.html"><i class="fa-solid fa-plus fa-2x"></i></a>
             <div class="padding"></div>
-            <a href="instelingen/verwijder/index.html"><i class="fa-solid fa-minus fa-3x"></i></a>
+            <a href="instelingen/verwijder/index.html"><i class="fa-solid fa-minus fa-2x"></i></a>
             <div class="padding"></div>
             </a>
         </div>
+    
+        
     </div>
+    <div class="padding"></div>
 
     <div class="main">
         <div id="container">
             <a id="tile" href="" >
                 <div>
-                    <i class="fa-solid fa-thumbs-down fa-3x"></i>
+                    <i class="fa-solid fa-trash-can fa-3x"></i>
                     <p>error</p>
                 </div>
             </a>
@@ -52,6 +54,7 @@
 
         <div class=""></div>
     </div>
+
 </body>
 
 </html>

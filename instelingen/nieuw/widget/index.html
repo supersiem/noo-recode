@@ -1,0 +1,83 @@
+<html lang="nl">
+
+<head>
+    <script>
+        // maak base
+        const baseElement = document.createElement("base");
+        baseElement.id = "baseElement";
+        baseElement.href = window.location.origin;
+        document.head.appendChild(baseElement);
+
+        // foto's
+        const images = document.getElementsByTagName("img");
+        for (let i = 0; i < images.length; i++) {
+            images[i].src =
+                window.location.origin + images[i].getAttribute("data-src");
+        }
+    </script>
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            laad_iconen();
+        });
+
+    </script>
+    <script>
+        function submitf() {
+            var naam = document.getElementById("naam").value;
+            // link
+            var link = document.getElementById("link").value;
+            if (!link.startsWith("https://")) {
+                link = "https://" + link;
+            }
+
+            data = get_JSON();
+            data.naam.push(naam);
+            data.icon.icondata.push("");
+            data.icon.icontype.push(""); // hotfix dus ja vervang dit
+            data.type.push("1");
+            data.link.push(link);
+            localStorage.setItem("main", JSON.stringify(data));
+            window.location.href = window.location.origin+"/index.html";
+            console.log("klaar");
+            return false;
+        }
+        function get_JSON() {
+            data = JSON.parse(localStorage.getItem("main"));
+            return data;
+        }
+    </script>
+    <link rel="stylesheet" href="instelingen/nieuw/css/icon_selector.css" />
+    <link rel="stylesheet" href="instelingen/nieuw/css/topbar.css" />
+    <link rel="stylesheet" href="css/button.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://kit.fontawesome.com/4f718ec3d3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="topbar_holder">
+        <img src="foto's/noo.png" alt="" class="topimg" />
+
+        <div class="topbar">
+            <a href="index.html"><i class="fa-solid fa-house fa-3x"></i></a>
+            <div class="padding"></div>
+            <a href="instelingen/nieuw/index.html"><i class="fa-solid fa-plus fa-3x"></i></a>
+            <div class="padding"></div>
+            <a href="instelingen/verwijder/index.html"><i class="fa-solid fa-minus fa-3x"></i></a>
+            <div class="padding"></div>
+            </a>
+        </div>
+    </div>
+
+    <form class="groot">
+        <label for="naam">naam</label>
+        <input type="text" name="naam" id="naam" /><br />
+        <label for="link">link</label>
+        <input type="text" name="link" id="link" />
+    </form>
+
+    <form class="groot">
+        <button type="button" onclick="submitf()">Submit</button>
+    </form>
+</body>
+
+</html>
