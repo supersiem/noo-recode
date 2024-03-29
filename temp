@@ -1,0 +1,14 @@
+
+    <div class="main">
+        <div id="container">
+            <a id="tile" href="" >
+                <div>
+                    <i class="fa-solid fa-thumbs-down fa-3x"></i>
+                    <p>error</p>
+                </div>
+            </a>
+        </div>
+
+
+        <div class=""></div>
+    </div>

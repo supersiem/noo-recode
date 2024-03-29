@@ -40,8 +40,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
   
       classNames.split(" ").forEach((className) => {
-        Ielement.classList.add(className);
-      });
+        // Check if className is not empty before adding it
+        if (className.trim() !== '') {
+            Ielement.classList.add(className);
+        }
+    });
   
       // Append the cloned tile to the container
       document.getElementById("container").appendChild(clonedTile);
