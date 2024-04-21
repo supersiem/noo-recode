@@ -1,0 +1,42 @@
+body {
+    background-color:#E7E9EB;
+  }
+  #container {
+    
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: left;
+    display: grid;
+    gap: 10px;
+    
+  }
+  .tegel_img {
+    width: 99%;
+    border-radius: 10px;
+
+  }
+  .tegel {
+    
+    text-align: left;
+    
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    padding: 10px;
+    height:15em;
+  }
+/* Heading */
+#container .tegel h3{
+  height:5px;
+ }
+ 
+ /* Paragraph */
+ #container .tegel p{
+  min-height:1px;
+  height:1px;
+ }
+ 
+ /* Link */
+ #container a{
+  padding-right:6px;
+  min-height:300px;
+ }

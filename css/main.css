@@ -17,17 +17,23 @@ body {
     height: 50px;
   }
   .topimg{
-    position: absolute;
-    left: 49%;
-
+    position: fixed;
+    transform:translatex(-12px) translatey(11px);
+    top: 0;
+    left: 50%;
     width: 3em;
     height: 3em;
   }
   .bars {
+    position: fixed;
+    width: 97.5%;
     height: 2.2em;
     border-radius: 30px;
     border: 10px solid rgb(255, 255, 255);
     background-color: rgb(255, 255, 255);
+  }
+  .bar_padding{
+    height: 24em;
   }
   .main {
     font-size: 28px; 
@@ -35,3 +41,19 @@ body {
   .font{
     font-family:'Montserrat', sans-serif;
   }
+.foto-padding{
+  height: 35%;
+}
+.foto {
+  min-height:554px;
+  transform:translatex(-12px) translatey(-8px);
+
+  position: absolute;
+  height: 33%;
+  z-index: -1;
+  background-size: 75%, 100%;
+  min-width: 2000px;
+  background-image: url("pasta.png");
+  background-repeat: no-repeat;
+  -webkit-clip-path:ellipse(90% 75% at 50% 0%);
+  clip-path:ellipse(90% 75% at 50% 0%)}
