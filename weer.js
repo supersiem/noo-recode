@@ -38,7 +38,7 @@ export class Widget_tool {
         return true
     }
   }
-const widget = new Widget_tool("weer.js", 'weer-widget');
+const widget = new Widget_tool("http://127.0.0.1:5500/weer.js", 'weer-widget');
 // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
 const apiKey = 'ea731e78fa72699b004ceea19f0067b1';
 const city = 'Groningen'; // Change this to the desired city

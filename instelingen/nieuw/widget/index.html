@@ -41,6 +41,20 @@
             console.log("klaar");
             return false;
         }
+        function auto_submit(naam, link) {
+
+            data = get_JSON();
+            data.naam.push(naam);
+            data.icon.icondata.push("");
+            data.icon.icontype.push(""); // hotfix dus ja vervang dit
+            data.type.push("1");
+            data.link.push(link);
+            localStorage.setItem("main", JSON.stringify(data));
+            // rederect naar index
+            window.location.href = window.location.origin+"/index.html";
+            console.log("klaar");
+            return false;
+        }
         function get_JSON() {
             data = JSON.parse(localStorage.getItem("main"));
             return data;
@@ -50,6 +64,10 @@
     <link rel="stylesheet" href="instelingen/nieuw/css/topbar.css" />
     <link rel="stylesheet" href="css/button.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/tegel_widget.css" />
+
+
+
     <script src="https://kit.fontawesome.com/4f718ec3d3.js" crossorigin="anonymous"></script>
 </head>
 
@@ -68,13 +86,35 @@
         </div>
     </div>
 
+
+
+
+        <div id="container">
+            <a href="javascript:auto_submit('weer-widget','http://127.0.0.1:5500/weer.js');" class="tegel">
+                <div class="tegel_widget">
+                    <img class="tegel_img" src="foto's/Test Foto Widget.svg">
+                        <h3>weer widget</h3>
+                        <p>met de weer widget kan je het weer op je start scherm bekijken.
+                             deze widget gebruikt de API van openweathermap </p>
+
+                </div>
+                </a>
+
+                <a href="" class="tegel">
+                    <div class="tegel_widget">
+                        <img src="">
+                            <h3>test</h3>
+                            <p>test</p>
+    
+                    </div>
+                    </a>
+    </div>
     <form class="groot">
         <label for="naam">naam</label>
         <input type="text" name="naam" id="naam" /><br />
         <label for="link">link</label>
         <input type="text" name="link" id="link" />
     </form>
-
     <form class="groot">
         <button type="button" onclick="submitf()">Submit</button>
     </form>
