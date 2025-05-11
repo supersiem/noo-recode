@@ -26,7 +26,6 @@ body {
   }
   .bars {
     position: fixed;
-    width: 97.5%;
     height: 2.2em;
     border-radius: 30px;
     border: 10px solid rgb(255, 255, 255);
@@ -53,8 +52,13 @@ body {
   z-index: -1;
   background-size: 75%, 100%;
   min-width: 2000px;
-  background-image: url("css/lucht.png");
-  background-repeat: no-repeat;
+  background-image: url("lucht.png");
+  background-repeat: repeat;
   -webkit-clip-path:ellipse(90% 75% at 50% 0%);
   clip-path:ellipse(90% 75% at 50% 0%);
+  padding: 0%;
+  width: 100%;
+    line-height: 350px;
+  padding-left: 5rem;
+  color: black;
 }

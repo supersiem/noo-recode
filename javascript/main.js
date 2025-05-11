@@ -1,13 +1,11 @@
 window.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM loaded");
+    // console.log("DOM loaded");
     setup();
     make_tiles();
   });
   function make_tiles() {
     const data = get_JSON();
-    console.log("loading tiles");
     for (let i = 0; i < data.naam.length; i++) {
-      console.log("loading " + data.naam[i]);
   
       duplicateAndModify(
         data.link[i],
@@ -19,9 +17,8 @@ window.addEventListener("DOMContentLoaded", function () {
     remove_the_placeholder();
   }
   function duplicateAndModify(link, text, icon, type) {
-    console.log(type);
     if (type == "0") {
-      console.log("normal");
+      // console.log("normal");
   
       // Get the original tile
       var originalTile = document.getElementById("tile");
@@ -49,22 +46,11 @@ window.addEventListener("DOMContentLoaded", function () {
       // Append the cloned tile to the container
       document.getElementById("container").appendChild(clonedTile);
     } else {
-      console.log("wigit");
-      // Get the original tile
-      var originalTile = document.getElementById("wigit");
-      var clonedTile = originalTile.cloneNode(true);
-      clonedTile.id = link;
-  
-      clonedTile.querySelector("script").src = link;
-  
-      // Append the cloned tile to the container
-      document.getElementById("container").appendChild(clonedTile);
+      alert("widgets zijn verwijdert van het project, verwijder ze van je startscherm.")
     }
   }
   function remove_the_placeholder() {
     var originalTile = document.getElementById("tile");
-    originalTile.remove();
-    var originalTile = document.getElementById("wigit");
     originalTile.remove();
   }
   function get_JSON() {
@@ -73,11 +59,11 @@ window.addEventListener("DOMContentLoaded", function () {
   }
   function setup() {
     if (localStorage.length === 0) {
-      // hoera voor de hotfix
       localStorage.setItem(
         "main",
-        '{"naam":["google"],"link":["https://google.com"],"icon":{"icondata":["fa-thumbs-up fa-solid"],"icontype":[""]},"type":["0"],"info":{"V":1.1}}',
+        '{"naam":["Siem"],"link":["https://siemvk.nl"],"icon":{"icondata":["fa-thumbs-up fa-solid"],"icontype":[""]},"type":["0"],"info":{"V":1.2}}',
       );
     }
+    document.getElementById("welkom").innerText = "Welkom, "+localStorage.getItem("naam");
   }
   
