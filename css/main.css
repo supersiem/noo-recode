@@ -56,4 +56,5 @@ body {
   background-image: url("css/lucht.png");
   background-repeat: no-repeat;
   -webkit-clip-path:ellipse(90% 75% at 50% 0%);
-  clip-path:ellipse(90% 75% at 50% 0%)}
+  clip-path:ellipse(90% 75% at 50% 0%);
+}
