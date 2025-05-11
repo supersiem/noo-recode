@@ -1,9 +1,10 @@
-.background[_ngcontent-ng-cli-universal-c238295917], .custom-background[_ngcontent-ng-cli-universal-c238295917], .background-default[_ngcontent-ng-cli-universal-c238295917]{
+.backgrouncustom-background[_ngcontent-ng-cli-universal-c238295917], .backgrd[_ngcontent-ng-cli-universal-c238295917], .ound-default[_ngcontent-ng-cli-universal-c238295917]{
     position:absolute;
     top:0;
     left:0;
     right:0;
     min-height:485px!important;
+    width: 100%!important;
     z-index:-1
 }
 .custom-background[_ngcontent-ng-cli-universal-c238295917]{
