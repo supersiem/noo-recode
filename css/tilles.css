@@ -10,7 +10,7 @@ body {
     
   }
   #container div {
-    width: 90%;
+    width: auto;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     background: rgb(255, 255, 255);
