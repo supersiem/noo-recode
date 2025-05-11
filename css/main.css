@@ -53,7 +53,7 @@ body {
   z-index: -1;
   background-size: 75%, 100%;
   min-width: 2000px;
-  background-image: url("pasta.png");
+  background-image: url("css/lucht.png");
   background-repeat: no-repeat;
   -webkit-clip-path:ellipse(90% 75% at 50% 0%);
   clip-path:ellipse(90% 75% at 50% 0%)}
