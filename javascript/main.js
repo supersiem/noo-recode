@@ -2,7 +2,20 @@ window.addEventListener("DOMContentLoaded", function () {
     // console.log("DOM loaded");
     setup();
     make_tiles();
+    load_banner();
   });
+  function load_banner() {
+    fetch("banner.json")
+      .then(function(response) { return response.json(); })
+      .then(function(data) {
+        var now = Math.floor(Date.now() / 1000);
+        if (now >= data.start && now <= data.end) {
+          document.getElementById("banner-text").textContent = data.text;
+          document.getElementById("banner").style.display = "block";
+        }
+      })
+      .catch(function() {});
+  }
   function make_tiles() {
     const data = get_JSON();
     for (let i = 0; i < data.naam.length; i++) {
