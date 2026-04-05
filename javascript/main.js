@@ -9,12 +9,19 @@ window.addEventListener("DOMContentLoaded", function () {
       .then(function(response) { return response.json(); })
       .then(function(data) {
         var now = Math.floor(Date.now() / 1000);
+        var bannerEl = document.getElementById("banner");
+        var bannerText = document.getElementById("banner-text");
+        var bannerClose = document.getElementById("banner-close");
+        if (!bannerEl || !bannerText || !bannerClose) return;
         if (now >= data.start && now <= data.end) {
-          document.getElementById("banner-text").textContent = data.text;
-          document.getElementById("banner").style.display = "block";
+          bannerText.textContent = data.text;
+          bannerEl.style.display = "block";
+          bannerClose.addEventListener("click", function() {
+            bannerEl.style.display = "none";
+          });
         }
       })
-      .catch(function() {});
+      .catch(function(err) { console.error("Banner kon niet worden geladen:", err); });
   }
   function make_tiles() {
     const data = get_JSON();
