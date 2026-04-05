@@ -2,7 +2,27 @@ window.addEventListener("DOMContentLoaded", function () {
     // console.log("DOM loaded");
     setup();
     make_tiles();
+    load_banner();
   });
+  function load_banner() {
+    fetch("banner.json")
+      .then(function(response) { return response.json(); })
+      .then(function(data) {
+        var now = Math.floor(Date.now() / 1000);
+        var bannerEl = document.getElementById("banner");
+        var bannerText = document.getElementById("banner-text");
+        var bannerClose = document.getElementById("banner-close");
+        if (!bannerEl || !bannerText || !bannerClose) return;
+        if (now >= data.start && now <= data.end) {
+          bannerText.textContent = data.text;
+          bannerEl.style.display = "block";
+          bannerClose.addEventListener("click", function() {
+            bannerEl.style.display = "none";
+          });
+        }
+      })
+      .catch(function(err) { console.error("Banner kon niet worden geladen:", err); });
+  }
   function make_tiles() {
     const data = get_JSON();
     for (let i = 0; i < data.naam.length; i++) {

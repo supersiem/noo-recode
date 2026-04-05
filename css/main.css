@@ -1,6 +1,30 @@
 body {
     font-family: "Lato", sans-serif;
   }
+  #banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0ad00;
+    color: #222;
+    padding: 0.6em 3em 0.6em 1em;
+    font-size: 1rem;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+  #banner-close {
+    position: absolute;
+    right: 0.8em;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #222;
+    line-height: 1;
+  }
   .padding{
     width:1em;
     height: 1em;
